@@ -3,11 +3,12 @@ kind: Service
 metadata:
   name: sila-api-service
 spec:
-  type: LoadBalancer
   selector:
-    app: my-api
+    app: sila-api
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 5000
+  - protocol: TCP
+    port: 80
+    targetPort: 5000
+    nodePort: 30007
+  type: NodePort
 
